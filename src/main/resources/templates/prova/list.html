@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <title>Gestionar Proves</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
+</head>
+<body>
+<div layout:fragment="content">
+    <h1>Llista de Proves</h1>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">Nom</th>
+            <th scope="col">Descripcio</th>
+            <th scope="col">Tipus</th>
+            <th scope="col">Data</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="prova: ${proves}">
+            <td th:text="${prova.nom}"></td>
+            <td th:text="${prova.descripcio}"></td>
+            <td th:text="${prova.tipus}"></td>
+            <td th:text="${#temporals.format(prova.data,'dd MMMM yyyy')}"></td>
+            <td><a class="btn btn-warning" th:href="@{/prova/update/{nom}(nom=${prova.nom})}">Edita</a>
+            </td>
+            <td><a class="btn btn-danger" th:href="@{/prova/delete/{nom}(nom=${prova.nom})}">Esborra</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <p>
+        <a class="btn btn-success" href="add">Afegeix proves</a>
+    </p>
+    <p>
+        <a class="btn btn-link" href="/">Tornar</a>
+    </p>
+</div>
+</body>
+</html>
