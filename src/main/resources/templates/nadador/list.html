@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{fragments/base}" lang="ES">
 <head>
     <title>Gestionar Nadadors</title>
     <meta charset="UTF-8" />
@@ -8,7 +9,7 @@
           th:href="@{/css/natacio.css}"/>
 </head>
 <body>
-<div>
+<div layout:fragment="content">
     <h1>Llista de Nadadors</h1>
     <div th:if="${#lists.isEmpty(nadadors)}">
         No hi ha nadadors en la base de dades
@@ -29,7 +30,6 @@
         <tr th:each="nadador: ${nadadors}">
             <td th:text="${nadador.numFederat}"></td>
             <td th:text="${nadador.nom}" th:class="${#strings.equals(nadador.genere, 'Femeni')} ? font-weight-bold : font-italic"></td>
-            <!--Preguntar por qué va raro lo de font  th:class="${#strings.equals(nadador.genere, 'Femeni')} ? font-weight-bold : font-italic"-->
             <td th:text="${nadador.pais}"></td>
             <td th:text="${nadador.edat}"></td>
             <td th:text="${nadador.genere}"></td>

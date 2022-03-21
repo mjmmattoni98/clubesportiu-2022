@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{fragments/base}" lang="ES">
 <head>
     <title>Gestionar Proves</title>
     <meta charset="UTF-8" />
@@ -8,7 +9,7 @@
           th:href="@{/css/natacio.css}"/>
 </head>
 <body>
-<div>
+<div layout:fragment="content">
     <h1>Llista de Proves</h1>
     <table class="table table-striped">
         <thead>

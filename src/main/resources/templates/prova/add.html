@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{fragments/base}" lang="ES">
 <head>
   <title>Crear nova prova</title>
   <meta charset="UTF-8" />
@@ -8,7 +9,7 @@
         th:href="@{/css/natacio.css}"/>
 </head>
 <body>
-<div class="container">
+<div class="container" layout:fragment="content">
   <h2>Nova prova</h2>
   <form action="#" th:action="@{/prova/add}"
         th:object="${prova}" method="post">

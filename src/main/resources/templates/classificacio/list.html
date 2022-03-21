@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{fragments/base}" lang="ES">
 <head>
     <title>Gestionar Classificacions</title>
     <meta charset="UTF-8" />
@@ -7,7 +8,7 @@
           href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"/>
 </head>
 <body>
-<div class="container">
+<div class="container" layout:fragment="content">
     <h1>Llista de Classificacions</h1>
     <table class="table table-striped">
         <thead>
