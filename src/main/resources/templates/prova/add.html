@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+  <title>Crear nova prova</title>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"/>
+  <link rel="stylesheet" type="text/css" href="/css/natacio.css"
+        th:href="@{/css/natacio.css}"/>
+</head>
+<body>
+<div class="container">
+  <h2>Nova prova</h2>
+  <form action="#" th:action="@{/prova/add}"
+        th:object="${prova}" method="post">
+    <table>
+      <tr>
+        <td><label>Nom</label></td>
+        <td><label>
+          <input type="text" th:field="*{nom}"/>
+        </label></td>
+      </tr>
+      <tr>
+        <td><label>Descripció</label></td>
+        <td><label>
+          <input type="text" th:field="*{descripcio}"/>
+        </label></td>
+      </tr>
+      <tr>
+        <td><label>Tipus</label></td>
+        <td><span>
+                   <input type="radio" th:field ="*{tipus}"
+                          value="Individual" id="tipus1" />
+                   <label for="tipus1">Individual</label>
+               </span>
+          <span>
+                   <input type="radio" th:field ="*{tipus}"
+                          value="Grupal" id="tipus2" />
+                   <label for="tipus2">Grupal</label>
+               </span>
+        </td>
+      </tr>
+      <tr>
+        <td><label>Data</label></td>
+        <td><label>
+          <input type="date" th:field="*{data}" placeholder="dd/MM/yyyy"/>
+        </label></td>
+      </tr>
+      <tr>
+        <td colspan="2"><input type="submit" value="Afegeix prova" /></td>
+      </tr>
+    </table>
+  </form>
+</div>
+</body>
+</html>

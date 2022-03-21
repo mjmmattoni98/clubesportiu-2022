@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+  <title>Modifica prova</title>
+  <meta charset ="UTF-8" />
+  <link rel ="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"/>
+  <link rel="stylesheet" type="text/css" href="/css/natacio.css"
+        th:href="@{/css/natacio.css}"/>
+</head>
+<body>
+<div class ="container">
+  <h2>Edita prova</h2>
+  <form action="#" th:action ="@{/prova/update}"
+        th:object="${prova}" method ="post">
+    <table>
+      <tr>
+        <td> <label>Nom</label> </td>
+        <td><label>
+          <input type="text" readonly="readonly" th:field="*{nom}" />
+        </label></td>
+      </tr>
+      <tr>
+        <td> <label>Descripció</label> </td>
+        <td><label>
+          <input type="text" th:field ="*{descripcio}" />
+        </label></td>
+      </tr>
+      <tr>
+        <td> <label>Tipus</label> </td>
+        <td> <span th:each ="tip: ${typeList}">
+             <label>
+              <input type ="radio" th:field ="*{tipus}" th:value ="${tip}" />
+              </label>
+             <label th:for="${#ids.prev('tipus')}" th:text ="${tip}"></label>
+            </span>
+        </td>
+      </tr>
+      <tr>
+        <td> <label>Date</label> </td>
+        <td> <input type ="text" th:field ="*{data}"/> </td>
+      </tr>
+      <tr>
+        <td colspan ="2"> <input type ="submit" value ="Modifica Prova"/> </td>
+      </tr>
+    </table>
+  </form>
+</div>
+</body>
+</html>

@@ -8,7 +8,7 @@ public class Prova {
     private String nom;
     private String descripcio;
     private String tipus;
-    //    @DateTimeFormat(pattern = "dd/MM/yyyy")
+    //@DateTimeFormat(pattern = "dd/MM/yyyy")
     @DateTimeFormat(iso=DateTimeFormat.ISO.DATE)
     private LocalDate data;
 
